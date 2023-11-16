@@ -1,4 +1,4 @@
-### PIC16B Project Page
+# PIC16B Project Page
 
 **Abstract**
 
