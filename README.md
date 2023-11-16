@@ -1,3 +1,5 @@
+### PIC16B Project Page
+
 **Abstract**
 
 This project aims to explore and understand AI-generated art through a simplified implementation of generative machine learning models such as diffusion models, VAE, and GAN. Through the model's intricate pattern learning, this project demonstrates its usefulness in various applications including synthetic data generation and anomaly detection. 
