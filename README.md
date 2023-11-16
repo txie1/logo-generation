@@ -2,9 +2,7 @@
 
 This project aims to explore and understand AI-generated art through a simplified implementation of generative machine learning models such as diffusion models, VAE, and GAN. Through the model's intricate pattern learning, this project demonstrates its usefulness in various applications including synthetic data generation and anomaly detection. 
 
-The overall approach to solve this problem involves delving into the architecture and workings of generative models, gaining a comprehensive understanding of deep neural networks, and acquiring practical experience with PyTorch.
-
-GitHub repository
+The overall approach to solving this problem involves delving into the architecture and workings of generative models, gaining a comprehensive understanding of deep neural networks, and acquiring practical experience with PyTorch.
 
 ## Planned Deliverables
 
@@ -81,12 +79,12 @@ Week 10: implemented metric to quantify quality of generated images
 
 
 ### (Additional Resources)
-GAN: Generative Adversarial Networks
-VAE: Auto-Encoding Variational Bayes
-Diffusion Model: Denoising Diffusion Probabilistic Models
+- GAN: Generative Adversarial Networks
+- VAE: Auto-Encoding Variational Bayes
+- Diffusion Model: Denoising Diffusion Probabilistic Models
 
-https://lilianweng.github.io/
-Stanford CS229: https://cs229.stanford.edu/main_notes.pdf
-Deep Learning (Goodfellow): https://www.deeplearningbook.org/
+- https://lilianweng.github.io/
+- Stanford CS229: https://cs229.stanford.edu/main_notes.pdf
+- Deep Learning (Goodfellow): https://www.deeplearningbook.org/
 
 
