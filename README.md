@@ -1,3 +1,5 @@
+<a name="readme-top"></a>
+
 # Generative ML: Diffusion Models and Logo Generation
 
 Contributors: Tong Xie, Janys Li, Judy Zhu
@@ -16,6 +18,9 @@ Contributors: Tong Xie, Janys Li, Judy Zhu
         <li><a href="#dataset">Dataset</a></li>
       </ul>
     </li>
+    <li><a href="#limit">Scope and Limitations</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#acknowledgments">Reference and Acknowledgments</a></li>
   <ol>
 </details>
 
@@ -33,7 +38,9 @@ This project aims to explore and understand AI-generated art through a minimalis
 ### Requirements (TODO: add packages)
 - [PyTorch (version)](https://pytorch.org/get-started/locally/) -
 - [Diffusers (0.24.0)](https://pypi.org/project/diffusers/) - State-of-the-art pretrained diffusion models
-- 
+- [Datasets (2.15.0)](https://pypi.org/project/datasets/) - Data loader for public datasets
+- [Numpy (1.21.5)](http://www.numpy.org/) - Multidimensional Mathematical Computing
+- [Pandas (1.4.2)](https://pandas.pydata.org/docs/getting_started/overview.html#) - Access dataframes
 
 <a name="dataset"></a>
 ### Dataset
@@ -41,51 +48,55 @@ This project aims to explore and understand AI-generated art through a minimalis
 
 
 
+## Example Usage
+**(TODO: demo here)**
+
+
+<img width="500" alt="image" src="https://github.com/txie1/pic16b/assets/117710195/acffc246-3e40-4f02-8a59-456f0bea58cb">
+
+*Sample generated logos: resolution 32x32 (left), 64x64 (right)*
 
 
 
-## Resources Required
+### Training
 
-To complete this project, the following resources will be required:
+<img width="552" alt="image" src="https://github.com/txie1/pic16b/assets/117710195/cde431b4-6cc9-415e-a346-1563774ad8fd">
 
-- Data: A dataset of images to train the generative machine learning models. The dataset can be obtained from public sources such as Hugging Face.
-- Computing Power: Sufficient computational resources will be needed to train and run the deep neural networks. This may include access to high-performance GPUs or cloud-based computing platforms.
-- Software and Libraries: PyTorch framework, and other libraries and tools for data preprocessing, model evaluation, and visualization may also be needed.
-Literature survey: Relevant research papers and documentation on generative models.
-
-## Tools and Skills Required
-
-The technical components of the project include:
-Understanding of generative model architecture
-Literature review: GAN, VAE, flow-based, diffusion models
-Useful concepts: UNet, attention
-(resources included below)
-Implementation of models
-utilizing the PyTorch framework and common datasets in literatures to implement and train the generative models
-Python Packages: Torch, Numpy, Pandas, tqdm, SciPy, Pillow, Seaborn
-Survey existing metrics used to measure model performance
-Understanding of loss function and techniques such as early-stopping
-Common metrics to measure generated images' quality (e.g. FID score)
-Implementation of the metrics and critical analysis / discussion
+*(Unconditioned Model)*
 
 
 
-## Risks & Ethics
-
-Insufficient computational power required for training generative models 
-Time required for training the deep neural networks
-Collection of patent-free images that are big enough to be used for training
-Generated images may contain sensitive / privacy-related content since the dataset used for training may not be fully regulated
-
-## Tentative Timeline
-
-- Week 4: confirmed project proposal and overall outline
-- Week 6: completed data acquisition pipeline and model architecture
-- Week 8: designed and implemented the text-to-image pipelines
-- Week 10: completed training of the text-conditioned model & User-Interface
 
 
-### Reference
+<img width="669" alt="image" src="https://github.com/txie1/pic16b/assets/117710195/1ca1c247-4470-46ee-9263-f560f029eb39">
+
+*(Context-conditioned Model)*
+
+
+
+
+
+<a name="limit"></a>
+## Limitations and Future Work
+
+
+
+
+<a name="license"></a>
+<!-- LICENSE -->
+## License
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+
+<a name="acknowledgments"></a>
+<!-- ACKNOWLEDGMENTS -->
+## Reference and Acknowledgment
+
 - DeepLearning.AI: [How Diffusion Models Work](https://www.deeplearning.ai/short-courses/how-diffusion-models-work/)
 - filipbasara0: [simple-diffusion](https://github.com/filipbasara0/simple-diffusion)
 - [Denoising Diffusion Probabilistic Models (DDPM)](https://arxiv.org/pdf/2006.11239.pdf) 
@@ -94,4 +105,5 @@ Generated images may contain sensitive / privacy-related content since the datas
 - [Stanford CS229](https://cs229.stanford.edu/main_notes.pdf)
 - [Deep Learning (Goodfellow)](https://www.deeplearningbook.org/)
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
