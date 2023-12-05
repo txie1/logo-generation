@@ -1,8 +1,47 @@
-# Diffusion Models and Logo Generation
+# Generative ML: Diffusion Models and Logo Generation
 
-This project aims to explore and understand AI-generated art through a minimalist implementation of generative machine learning models such as diffusion models. Through the model's intricate pattern learning, this project demonstrates its usefulness in various applications including synthetic data generation and anomaly detection. 
+Contributors: Tong Xie, Janys Li, Judy Zhu
 
-The overall approach to solving this problem involves delving into the architecture and workings of generative models, gaining a comprehensive understanding of deep neural networks, and acquiring practical experience with PyTorch.
+
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">Overview</a>
+      <ul>
+        <li><a href="#built-with">Requirements</a></li>
+      </ul>
+      <ul>
+        <li><a href="#dataset">Dataset</a></li>
+      </ul>
+    </li>
+  <ol>
+</details>
+
+
+
+
+
+<a name="about-the-project"></a>
+<!-- GETTING STARTED -->
+## Overview
+
+This project aims to explore and understand AI-generated art through a minimalist implementation of **diffusion models**. To this end, two models were trained from scratch with the purpose of generating new logos: 1). **Unconditioned model**, and 2). **Context-conditioned model**. A simple User-Interface is also designed to make the generation more convenient and accessible.
+
+<a name="built-with"></a>
+### Requirements (TODO: add packages)
+- [PyTorch (version)](https://pytorch.org/get-started/locally/) -
+- [Diffusers (0.24.0)](https://pypi.org/project/diffusers/) - State-of-the-art pretrained diffusion models
+- 
+
+<a name="dataset"></a>
+### Dataset
+- [Hugging Face modern-logo-dataset](https://huggingface.co/datasets/logo-wizard/modern-logo-dataset) - 803 pairs (x, y) where x is the image, y is the text description
+
+
+
+
 
 
 ## Resources Required
