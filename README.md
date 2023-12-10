@@ -60,25 +60,45 @@ This project aims to explore and understand AI-generated art through a minimalis
 
 ### Training
 
+
+#### Unconditioned Model
+
 <img width="552" alt="image" src="https://github.com/txie1/pic16b/assets/117710195/cde431b4-6cc9-415e-a346-1563774ad8fd">
 
-*(Unconditioned Model)*
 
 
 
-
+#### Context-Conditioned Model
 
 <img width="669" alt="image" src="https://github.com/txie1/pic16b/assets/117710195/1ca1c247-4470-46ee-9263-f560f029eb39">
 
-*(Context-conditioned Model)*
+To incorporate text prompts as an additional input to control the inference process, we adopt the simplified strategy of converting text into categories of multi-hot-encodings. Specifically, we first analyze the top-_n_ highest frequency keywords training dataset (e.g. ["modern", "minimalism", "black", "white", "inscription"]). Then map each text into **context**, which is an _n_-dimensional binary encoding vector (e.g. a text only containing "modern" is mapped to [1, 0, 0, 0, 0]).
 
+Then the context encoder is turned into embeddings along with timesteps, starting at the down-sample layers. This is then followed by the typical UNet architecture with residual connections and Attention layers. 
 
+One point to note is that during the training iterations, we also included the random masking-out of the contexts (ie. turns context vector into [0, 0, 0, 0, 0]). This is beneficial for the model to learn the true logo signals, without the influence of text description and features. It is also noticed that the quality of generated samples would improve after this implementation.
 
+```
+for epoch in range(1, num_epochs+1):
+    ...
+    for step, batch in enumerate(train_dataloader):
+        ...
+
+        # randomly mask out context
+        context_mask = torch.bernoulli(torch.zeros(context.shape[0]) + 0.9).to(device)
+        context = context * context_mask.unsqueeze(-1)
+        ...
+```
+
+To generate images with a trained model, simply input the desired text prompts. The model will sample from the learned joint distribution of logos and context encoders, and iterate through 50 DDIM inference steps to output a denoise, coherent new logo!
 
 
 <a name="limit"></a>
 ## Limitations and Future Work
-
+- Since a text prompt may contain multiple keywords, the use of multi-hot-encodings creates difficulties for the model to learn an accurate representation for each feature. In this case, the differences between styles might not be easily distinguishable. For further improvement, it is beneficial to 1). utilize one-hot-encoding and more distinct keywords, 2). use an encoding vector of larger dimensions to cover more features (though also increases the model complexity and thus computation resources required).
+- Instead of hot-encoders, consider leveraging language models to create embeddings for text prompts directly. This should significantly improve the model performance and enable the generation of logos based on flexible user inputs and semantic meanings.
+- Explore different options and locations for text and timestep embeddings, and how such modifications lead to changes in model performance.
+- 
 
 
 
