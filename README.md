@@ -92,6 +92,37 @@ for epoch in range(1, num_epochs+1):
 
 To generate images with a trained model, simply input the desired text prompts. The model will sample from the learned joint distribution of logos and context encoders, and iterate through 50 DDIM inference steps to output a denoise, coherent new logo!
 
+### Usage
+
+#### User Interface and Text Embedding Pipeline
+
+To create a seamless experience for our target users, who might not have ample background knowledge of diffusion models, we constructed a user interface using the `ipywidgets` library. The interface prompts the user to input words specifying the style of the logo they are imagining, and outputs the words to functionalities further down the pipeline which utilizes the trained model to generate images.
+
+To use the UI, first go to the `train_model.ipynb` file, navigate to the directory where you have saved the required `.py` files, and load your pre-trained model checkpoint as demonstrated below:
+
+```
+# Load pre-trained model
+checkpoint = torch.load('ckpt_1500_25.pth', map_location=torch.device('cpu'))
+model.load_state_dict(checkpoint['model_state'])
+```
+
+Then, run the cell below and input the style you are looking for. Input one word at a time and hit `Confirm`.
+
+```
+# Utilize model
+model_input = modelui(glove_vectors)
+```
+
+After entering all the prompt, hit the `Finish` button and run the following code
+
+```
+# Get processed words and generate image
+processed_words = get_processed_words()
+generate_image(processed_words,device,noise_scheduler,model,n_inference_timesteps)
+```
+
+A desired image should be generated with the current trained model checkpoint.
+
 
 <a name="limit"></a>
 ## Limitations and Future Work
