@@ -93,11 +93,11 @@ For our unconditioned model, due to limited computational resources, we trained 
 
 <img width="669" alt="image" src="https://github.com/txie1/pic16b/assets/117710195/1ca1c247-4470-46ee-9263-f560f029eb39">
 
-To incorporate text prompts as an additional input to control the inference process, we adopt the simplified strategy of converting text into categories of multi-hot-encodings. Specifically, we first analyze the top-_n_ highest frequency keywords training dataset (e.g. ["modern", "minimalism", "black", "white", "inscription"]). Then map each text into **context**, which is an _n_-dimensional binary encoding vector (e.g. a text only containing "modern" is mapped to [1, 0, 0, 0, 0]).
+To incorporate text prompts as an additional input to control the inference process, we adopt the simplified strategy of converting text into categories of multi-hot-encodings. Specifically, we first analyze the top-_n_ highest frequency keywords training dataset (e.g. `["modern", "minimalism", "black", "white", "inscription"]`). Then map each text into **context**, which is an _n_-dimensional binary encoding vector (e.g. a text only containing "modern" is mapped to `[1, 0, 0, 0, 0]`).
 
 Then the context encoder is turned into embeddings along with timesteps, starting at the down-sample layers. This is then followed by the typical UNet architecture with residual connections and Attention layers. 
 
-One point to note is that during the training iterations, we also included the random masking-out of the contexts (ie. turns context vector into [0, 0, 0, 0, 0]). This is beneficial for the model to learn the true logo signals, without the influence of text description and features. It is also noticed that the quality of generated samples would improve after this implementation.
+One point to note is that during the training iterations, we also included the random masking-out of the contexts (ie. turns context vector into `[0, 0, 0, 0, 0]`). This is beneficial for the model to learn the true logo signals, without the influence of text description and features. It is also noticed that the quality of generated samples would improve after this implementation.
 
 ```
 for epoch in range(1, num_epochs+1):
@@ -124,7 +124,7 @@ To generate images with a trained model, simply input the desired text prompts. 
 python3 train_context.py --resolution=32 --train_batch_size=32 --num_epochs=1000 --save_model_epochs=200 --learning_rate=1e-4
 ```
 
-(This resizes the training dataset to image_size of 32x32, then trains with batch_size=32 for 1000 epochs using learning_rate=1e-4. A model checkpoint will be saved every 200 epochs. Note that additional parser arguments are available to modify settings such as output_dir, loss function, gradient clipping, eval_batch_size, etc.)
+(This resizes the training dataset to `image_size` of 32x32, then trains with `batch_size=32` for 1000 epochs using `learning_rate=1e-4`. A model checkpoint will be saved every 200 epochs. Note that additional parser arguments are available to modify settings such as `output_dir`, loss function, gradient clipping, `eval_batch_size`, etc.)
 
 **To resume training**, use the command:
 
