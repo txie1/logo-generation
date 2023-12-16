@@ -106,6 +106,8 @@ checkpoint = torch.load('ckpt_1500_25.pth', map_location=torch.device('cpu'))
 model.load_state_dict(checkpoint['model_state'])
 ```
 
+*Note that since our trained file 'ckpt_1500_25.pth' is too large, we were not able to upload it to this repository; however, with our provided code, one can achieve a similar model with the same parameters.*
+
 Then, run the cell below and input the style you are looking for. Input one word at a time and hit `Confirm`.
 
 ```
