@@ -199,5 +199,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 - [Stanford CS229](https://cs229.stanford.edu/main_notes.pdf)
 - [Deep Learning (Goodfellow)](https://www.deeplearningbook.org/)
 
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
